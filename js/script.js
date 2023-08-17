@@ -36,6 +36,7 @@ let displayedJobsCount = 0;
 
 function displayJobs(jobs) {
   const jobListElement = document.getElementById("jobList");
+  const jobCountElement = document.getElementById("jobCount");
   jobListElement.innerHTML = ""; // Clear the previous content
 
   jobs.forEach((job) => {
@@ -68,7 +69,8 @@ function displayJobs(jobs) {
 
         // Mettre à jour le nombre d'offres d'emploi affichées
     displayedJobsCount += jobs.length;
-
+    // Mettre à jour le nombre d'emplois trouvés
+    jobCountElement.textContent = `${displayedJobsCount} jobs trouvés`;
     // Vérifie si le bouton "Voir plus" doit être affiché ou masqué
     if (displayedJobsCount >= jobs.length) {
       document.getElementById('showMoreBtn').style.display = 'none';
