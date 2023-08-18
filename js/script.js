@@ -66,11 +66,9 @@ function displayJobs(jobs) {
     `;
 
     jobListElement.insertAdjacentHTML("beforeend", jobItem);
-
-        // Mettre à jour le nombre d'offres d'emploi affichées
-    displayedJobsCount += jobs.length;
+ 
     // Mettre à jour le nombre d'emplois trouvés
-    jobCountElement.textContent = `${displayedJobsCount} jobs trouvés`;
+    jobCountElement.textContent = `${jobs.length} jobs trouvés`;
     // Vérifie si le bouton "Voir plus" doit être affiché ou masqué
     if (displayedJobsCount >= jobs.length) {
       document.getElementById('showMoreBtn').style.display = 'none';
